@@ -3,6 +3,7 @@ import { View, Text, TouchableOpacity, } from 'react-native';
 import { globalStyles } from '../styles/global';
 
 export default function SavedScreen(props) {
+  const { navigation } = props;
   // Using route.params this screen component can read the parameters passed from 
   // the Home screen. Below is the destructuring of route.param used to display the 
   // values passed from the Home screen. I also added navigation alongside 'route' 

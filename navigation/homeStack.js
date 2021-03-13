@@ -3,6 +3,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import HomeScreen from "../screens/home";
 import LoginScreen from "../screens/login";
+import SavedScreen from "../screens/saved";
 
 const HStack = createStackNavigator(); // creates the stack navigator 'HStack'
 
@@ -41,6 +42,7 @@ export default function HomeStack() {
             component={LoginScreen} 
             options={{ title: 'Login Screen' }}
           />
+          
   
           {/* <Stack.Screen 
             name="Details" 

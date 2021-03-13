@@ -6,7 +6,7 @@ export default function TripList(props) {
     const property = props.property;
     const title = props.title;
     const { navigation } = props;
-    console.log(props);
+    // console.log(props);
 
     return ( 
         <View style={globalStyles.conatainer}>
@@ -21,7 +21,7 @@ export default function TripList(props) {
                 <View style={globalStyles.buttonContainer}>
                 <Button 
                     title='Save trip'
-                    onPress={() => navigation.navigate('Saved')}   
+                    onPress={() => navigation.navigate('SaveStack', { screen: 'Saved' })}   
                 />
                 </View>
                 </View>
