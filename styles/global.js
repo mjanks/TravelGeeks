@@ -27,18 +27,29 @@ export const globalStyles = StyleSheet.create({
         color: '#fff'
       },
       card: {
-        width: 350,
-        height: 100,
+        width: 287,
+        height: 195,
         borderRadius: 10,
         backgroundColor: '#ffffff',
         margin: 10,
         padding: 10,
-        justifyContent: 'center',
+        justifyContent: 'space-evenly',
         alignItems: 'center'
       },
       cardText: {
         fontSize: 18,
         color: 'blue',
-        marginBottom: 5
+        marginBottom: 5,
       },
+      homeImage: {
+        width: 400,
+        height: 200,
+        margin: 22,
+      },
+      input: {
+        height: 30,
+        width: 215,
+        margin: 12, 
+        borderWidth: 1,
+      }
 });

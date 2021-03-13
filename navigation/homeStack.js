@@ -2,6 +2,7 @@ import * as React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
 import HomeScreen from "../screens/home";
+import LoginScreen from "../screens/login";
 
 const HStack = createStackNavigator(); // creates the stack navigator 'HStack'
 
@@ -18,12 +19,12 @@ export default function HomeStack() {
             // IOS this is default behavior
             gestureEnabled: true,
             headerStyle: {
-              backgroundColor: '#101010'
+              backgroundColor: '#fbdddd'
             },
             headerTitleStyle: {
               fontWeight: 'bold'
             },
-            headerTintColor: '#ffd700',
+            headerTintColor: '#101010',
             // makes the back button title invisible on IOS,
             // Android only shows the arrow so it's ok.
             headerBackTitleVisible: false
@@ -34,6 +35,11 @@ export default function HomeStack() {
             name="Home" 
             component={HomeScreen} 
             options={{ title: 'Home Screen' }}
+          />
+          <HStack.Screen 
+            name="Login" 
+            component={LoginScreen} 
+            options={{ title: 'Login Screen' }}
           />
   
           {/* <Stack.Screen 

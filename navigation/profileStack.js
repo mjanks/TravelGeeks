@@ -3,6 +3,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 import ProfileScreen from "../screens/profile";
 
+
 const ProfStack = createStackNavigator();
 
 export default function ProfileStack() {
@@ -12,21 +13,23 @@ export default function ProfileStack() {
           screenOptions={{
             gestureEnabled: true,
             headerStyle: {
-              backgroundColor: '#101010'
+              backgroundColor: '#fbdddd'
             },
             headerTitleStyle: {
               fontWeight: 'bold'
             },
-            headerTintColor: '#ffd700',
+            headerTintColor: '#101010',
             headerBackTitleVisible: false
           }}
-          headerMode='none'
+          headerMode='none'  // none, or float
         >
           <ProfStack.Screen 
             name="Profile" 
             component={ProfileScreen} 
             options={{ title: 'Profile Screen' }}
           />
+
+          
   
         </ProfStack.Navigator>
     );
