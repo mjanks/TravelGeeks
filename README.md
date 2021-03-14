@@ -2,6 +2,9 @@
 
 Clone the repository and run npm install to add all of the dependencies listed in the package.json file.
 
+3/13/21
+Data being displayed in the TripList is pulled from a test database I've setup on my server.
+
 3/7/21
 Added dependencies:
 npm install @react-navigation/native @react-navigation/stack 
