@@ -6,19 +6,8 @@ import TripList from './TripList';
 
 export default function HomeScreen(props) {
   const { navigation } = props; // this is necessary to be able to use navigation below
-
-  // const [character, setCharacter] = useState([
-  //   { name: 'Luke Skywalker', home: 'Tatooine', species: 'human', key: 1 },
-  //   { name: 'Michael', home: 'Earth', species: 'human', key: 2 },
-  //   { name: 'Taylor', home: 'Earth', species: 'human', key: 3 },
-  //   { name: 'Chelsea', home: 'Mars', species: 'human', key: 4 },
-  //   { name: 'Luke Skywalker', home: 'Tatooine', species: 'human', key: 5 },
-  //   { name: 'Michael', home: 'Earth', species: 'human', key: 6 },
-  //   { name: 'Taylor', home: 'Earth', species: 'human', key: 7 },
-  //   { name: 'Chelsea', home: 'Mars', species: 'human', key: 8 }
-  // ]);
-
-  const [property, setProperty] = useState();
+  const [property, setProperty] = useState(null);
+  const [isPending, setIsPending] = useState(true);
 
   useEffect(() => {
     fetch('https://michaeljanks.com/getJson.php', {
@@ -32,6 +21,7 @@ export default function HomeScreen(props) {
     })
     .then((data) => {
       setProperty(data);
+      setIsPending(false);
       //console.log(data);
     })
   }, []);
@@ -46,15 +36,13 @@ export default function HomeScreen(props) {
       <Text style={globalStyles.titleText}>Welcome to Travel-Geeks!</Text>
       <TouchableOpacity
           style={globalStyles.buttonContainer}
-        // Using 'popToTop' method to return to the top of the stack, 
-        // which is the Home screen. This way we don't have to click back through 
-        // the details screen to get there.
           onPress={() => navigation.navigate('Login')}
         >
-          <Text style={globalStyles.buttonText}>Login or create account</Text>
-        </TouchableOpacity>
-        <Text style={globalStyles.titleText}>Browse properties</Text>
-        <TripList property={property} navigation={navigation}/>
+        <Text style={globalStyles.buttonText}>Login or create account</Text>
+      </TouchableOpacity>
+      <Text style={globalStyles.titleText}>Browse properties</Text>
+      { isPending && <Text style={globalStyles.titleText}>Loading properties...</Text> }
+      { property && <TripList property={property} navigation={navigation}/> }
       
       {/* <TouchableOpacity
         style={globalStyles.buttonContainer}
