@@ -1,15 +1,13 @@
-import * as React from 'react';
-import { View, Text, TouchableOpacity, } from 'react-native';
+import React from "react";
+import { View, Text } from "react-native";
 import { globalStyles } from '../styles/global';
 
-export default function ProfileScreen(props) {
-  const { navigation } = props; // Always need access to navigation
-    return (
-      <View style={globalStyles.conatainer}>
-        <Text style={globalStyles.titleText}>Profile Screen</Text>
+const Profile = () => {
+  return (
+    <View style={globalStyles.container}>
+      <Text>This is the Profile screen</Text>
+    </View>
+  );
+};
 
-        
-        
-      </View>
-    );
-  }
+export default Profile;

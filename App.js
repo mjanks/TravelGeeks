@@ -1,11 +1,13 @@
-import * as React from 'react';
-import MainStackNav from "./navigation/mainStackNav";
+// ./App.js
+import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import BottomTabNavigator from "./navigation/tabNavigator";
 
-function App() {
+const App = () => {
   return (
-    // Just return the MainStackNav component, done!
-    <MainStackNav />
+    <NavigationContainer>
+      <BottomTabNavigator />
+    </NavigationContainer>
   );
-}
-
+};
 export default App;
