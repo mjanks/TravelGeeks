@@ -21,10 +21,10 @@ const Home = ({ navigation }) => {
       { isPending && <Text>Loading properties...</Text> }
       { properties && <FlatList 
           data={properties}
+          keyExtractor={(item, index) => item.propertyID}
           renderItem={({ item }) => (
               <TouchableOpacity onPress={() => navigation.navigate('PropertyDetails', item)}>
                   <Card>
-                  {/* <Text>{ item.id }</Text> */}
                   <Text>Price: ${ item.price }</Text>
                   <Text>Address: { item.street }</Text>
                   <Text>Title: { item.title }</Text>
