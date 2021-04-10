@@ -4,11 +4,11 @@ import Card from '../shared/card';
 import { globalStyles, images } from '../styles/global';
 
 const PropertyDetails = ({ route, navigation }) => {
-  // const { name, description, rating } = route.params;
-  // const property = { name, description, rating };
+  const { name, description, rating } = route.params;
+  const property = { name, description, rating };
 
-  const { price, street, title, textSummary, numBeds, numBaths, city, state, zipcode } = route.params;
-  const property = { price, street, title, textSummary, numBeds, numBaths, city, state, zipcode };
+  // const { price, street, title, textSummary, numBeds, numBaths, city, state, zipcode } = route.params;
+  // const property = { price, street, title, textSummary, numBeds, numBaths, city, state, zipcode };
 
   const pressHandler = () => {
 
@@ -31,7 +31,7 @@ const PropertyDetails = ({ route, navigation }) => {
       <Text>Property Details Screen</Text>
       <Card>
       {/* <Text>{ navigation.getParam('id') }</Text> */}
-      <Text>Price: ${ price }</Text>
+      {/* <Text>Price: ${ price }</Text>
       <Text>Address: { street }</Text>
       <Text>Title: { title }</Text>
       <Text>Summary: { textSummary }</Text>
@@ -39,11 +39,13 @@ const PropertyDetails = ({ route, navigation }) => {
       <Text>Number of baths: { numBaths }</Text>
       <Text>City: { city }</Text>
       <Text>State: { state }</Text>
-      <Text>Zipcode: { zipcode }</Text>
-      {/* <View style={globalStyles.rating}>
+      <Text>Zipcode: { zipcode }</Text> */}
+      <Text>Name: { name } </Text>
+      <Text>Description: { description } </Text>
+      <View style={globalStyles.rating}>
           <Text>Rating:</Text>
           <Image source={images.ratings[rating]} />
-      </View> */}
+      </View>
       
       </Card>
       <View style={globalStyles.buttonContainer}>

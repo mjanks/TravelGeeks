@@ -100,7 +100,7 @@ const styles = StyleSheet.create({
 		backgroundColor: "#FFF",
 	},
 	text: {
-		fontFamily: "HelveticaNeue",
+		// fontFamily: "HelveticaNeue",
 		color: "#52575D",
 		textAlign: "center",
 	},

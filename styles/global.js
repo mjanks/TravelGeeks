@@ -38,6 +38,14 @@ export const globalStyles = StyleSheet.create({
         height: 200,
         margin: 5,
     },
+    input: {
+        borderWidth: 1,
+        borderColor: '#777',
+        padding: 3,
+        margin: 5,
+        width: 200,
+    }
+
 });
 
 export const images = {
