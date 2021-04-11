@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-import { RefreshControl, Button, View, Text, FlatList, TouchableOpacity, Image } from "react-native";
+import { Button, View, Text, FlatList, TouchableOpacity, Image } from "react-native";
 import Card from '../shared/card';
-import useFetch from '../shared/useFetch';
 import { globalStyles} from '../styles/global';
 
 const Home = ({ navigation }) => {
@@ -43,33 +42,27 @@ const Home = ({ navigation }) => {
 
       <Text>Browse properties below:</Text>
       <Button title='Tap to View Properties/Refresh List' onPress={getData}/>
-      {/* { error && <Text>{ error }</Text>}
-      { isPending && <Text>Loading properties...</Text> } */}
       <FlatList
           data={data}
-          // keyExtractor={(item, index) => item.propertyID}
+          keyExtractor={(item, index) => item.PropertyId}
           renderItem={({ item }) => (
               <TouchableOpacity onPress={() => navigation.navigate('PropertyDetails', item)}>
                   <Card>
-                  {/* <Text>Price: ${ item.price }</Text>
-                  <Text>Address: { item.street }</Text>
-                  <Text>Title: { item.title }</Text>
-                  <Text>Text Summary: { item.textSummary }</Text>
-                  <Text>Number of beds: { item.numBeds }</Text>
-                  <Text>Number of baths: { item.numBaths }</Text>
-                  <Text>City: { item.city }</Text>
-                  <Text>State: { item.state }</Text>
-                  <Text>Zipcode: { item.zipcode }</Text> */}
-                  <Text>Name: { item.name } </Text>
-                  <Text>Description: { item.description } </Text>
-                  <Text>Rating: { item.rating } </Text>
+                  <Text>Price: ${ item.Price }</Text>
+                  <Text>Address: { item.StreetAddress }</Text>
+                  <Text>City: { item.City }</Text>
+                  <Text>State: { item.State }</Text>
+                  <Text>Zipcode: { item.Zipcode }</Text>
+                  <Text>Title: { item.Title }</Text>
+                  <Text>Description: { item.Description }</Text>
+                  <Text>Number of beds: { item.NumBeds }</Text>
+                  <Text>Number of baths: { item.NumBaths }</Text>
+                  <Text>Rating: { item.Rating }</Text>
                   </Card>
               </TouchableOpacity>
           )}
       /> 
-
     </View>
   );
 };
-
 export default Home;
