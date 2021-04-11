@@ -41,7 +41,7 @@ const PropertyDetails = ({ route, navigation }) => {
     })
     .then(data => {
       setData(data);
-      console.log(JSON.stringify(property));
+      console.log(JSON.stringify(data));
     })
     .catch(err => {
       if (err.name === 'AbortError') {
@@ -76,7 +76,7 @@ const PropertyDetails = ({ route, navigation }) => {
         <Button title='Write a review' color='#cc1111' onPress={() => navigation.navigate('WriteReview', property)} />
       </View>
 
-      <Button title='Tap to see reviews of this property' onPress={getData}/>
+      <Button title='Tap to see reviews/refresh list' onPress={getData}/>
       <FlatList
           data={data}
           keyExtractor={(item, index) => item.ReviewId}

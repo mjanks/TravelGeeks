@@ -3,30 +3,28 @@ import { ScrollView, View, Text, TextInput, Button } from "react-native";
 import { globalStyles } from "../styles/global";
 
 const WriteReview = ({ route, navigation }) => {
+  const { PropertyId } = route.params; // PropertyId passed in using the route prop on the above line
   const [rating, setRating] = useState('');
   const [title, setTitle] = useState('');
   const [text, setText] = useState('');
   const [timePosted, setTimePosted] = useState('');
   const [reviewerId, setReviewerId] = useState('');
-  const [propId, setPropetyId] = useState('');
-
+  const [propId, setPropertyId] = useState(PropertyId); // set the initial state of propId to the PropertyId 
+  
   const review = { rating, title, text, timePosted, reviewerId, propId };
-  const { PropertyId } = route.params;
-
+  
   const pressHandler = () => {
-    setPropetyId({PropertyId});
-    alert('Not yet implemented!');
-    // alert('Review has been added! Tap refresh button to view updated list.');
+    alert('Review has been added! Tap refresh button to view updated list.');
 
-    // fetch('https://michaeljanks.com/addReview.php', {
-    //   method: 'POST',
-    //   headers: { "Content-Type": "application/json" },
-    //   body: JSON.stringify(property)
-    // }).then(() => {
-    //   console.log('new review added');
-    //   console.log(JSON.stringify(property));
-    // })
-    navigation.navigate('Home');
+    fetch('https://michaeljanks.com/addReview.php', {
+      method: 'POST',
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(review)
+    }).then(() => {
+      console.log('new review added');
+      console.log(JSON.stringify(review));
+    })
+    navigation.navigate('PropertyDetails');
   }
 
 	return (
@@ -57,8 +55,12 @@ const WriteReview = ({ route, navigation }) => {
         placeholder='Enter date/time'
         onChangeText={(val) => setTimePosted(val) }
       />
-      
-      {/* <Text>PropertyId: {PropertyId}</Text> */}
+      {/* <Text>Reviewer Id:</Text>
+      <TextInput 
+        style={globalStyles.input}
+        placeholder='Enter a reviewerId'
+        onChangeText={(val) => setReviewerId(val) }
+      /> */}
       
       <View style={globalStyles.buttonContainer}>
         <Button title='Tap to submit review' color='#cc1111' onPress={pressHandler} />
