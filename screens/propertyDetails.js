@@ -4,8 +4,8 @@ import Card from '../shared/card';
 import { globalStyles, images } from '../styles/global';
 
 const PropertyDetails = ({ route, navigation }) => {
-  const { Price, StreetAddress, City, State, Zipcode, Title, Description, NumBeds, NumBaths, Rating } = route.params;
-  const property = { Price, StreetAddress, City, State, Zipcode, Title, Description, NumBeds, NumBaths, Rating };
+  const { PropertyId, Price, StreetAddress, City, State, Zipcode, Title, Description, NumBeds, NumBaths, Rating } = route.params;
+  const property = { PropertyId, Price, StreetAddress, City, State, Zipcode, Title, Description, NumBeds, NumBaths, Rating };
 
   const pressHandler = () => {
 
@@ -19,7 +19,7 @@ const PropertyDetails = ({ route, navigation }) => {
     // })
 
     alert('Not yet implemented!');
-    //navigation.goBack();
+    navigation.navigate('Home');
   }
 
   return (
@@ -45,6 +45,10 @@ const PropertyDetails = ({ route, navigation }) => {
       </Card>
       <View style={globalStyles.buttonContainer}>
         <Button title='Save this property!' color='#cc1111' onPress={pressHandler} />
+      </View>
+
+      <View style={globalStyles.buttonContainer}>
+        <Button title='Write a review' color='#cc1111' onPress={() => navigation.navigate('WriteReview', property)} />
       </View>
 
     </View>

@@ -8,6 +8,7 @@ import Trips from "../screens/trips";
 import Inbox from "../screens/inbox";
 import Profile from "../screens/profile";
 import Host from "../screens/host";
+import WriteReview from "../screens/writeReview";
 
 const Stack = createStackNavigator();
 
@@ -21,9 +22,13 @@ const screenOptionStyle = {
 
 const MainStackNavigator = () => {
 	return (
-		<Stack.Navigator screenOptions={screenOptionStyle} headerMode="none">
+		<Stack.Navigator 
+			screenOptions={screenOptionStyle} 
+			headerMode="none"
+		>
 			<Stack.Screen name="Home" component={Home} />
 			<Stack.Screen name="PropertyDetails" component={PropertyDetails} />
+			<Stack.Screen name="WriteReview" component={WriteReview} />
 		</Stack.Navigator>
 	);
 };

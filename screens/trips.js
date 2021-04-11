@@ -17,7 +17,7 @@ const Trips = () => {
 			<ScrollView showsVerticalScrollIndicator={false}>
 				<View style={styles.titleBar}></View>
 
-				<View style={{ marginTop: 32, alignItems: "left" }}>
+				<View style={{ marginTop: 32}}>
 					<ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
 						<View style={styles.mediaImageContainer}>
 							<Image
@@ -46,7 +46,7 @@ const Trips = () => {
 					</ScrollView>
 				</View>
 
-				<View style={{ marginTop: 32, alignItems: "left" }}>
+				<View style={{ marginTop: 32}}>
 					<ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
 						<View style={styles.mediaImageContainer}>
 							<Image
@@ -75,7 +75,7 @@ const Trips = () => {
 					</ScrollView>
 				</View>
 
-				<View style={{ marginTop: 32, alignItems: "left" }}>
+				<View style={{ marginTop: 32}}>
 					<ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
 						<View style={styles.mediaImageContainer}>
 							<Image
