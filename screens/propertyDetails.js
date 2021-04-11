@@ -4,8 +4,8 @@ import Card from '../shared/card';
 import { globalStyles, images } from '../styles/global';
 
 const PropertyDetails = ({ route, navigation }) => {
-  const { PropertyId, Price, StreetAddress, City, State, Zipcode, Title, Description, NumBeds, NumBaths, Rating } = route.params;
-  const property = { PropertyId, Price, StreetAddress, City, State, Zipcode, Title, Description, NumBeds, NumBaths, Rating };
+  const { PropertyId, Price, StreetAddress, City, State, Zipcode, Title, Description, NumBeds, NumBaths, } = route.params;
+  const property = { PropertyId, Price, StreetAddress, City, State, Zipcode, Title, Description, NumBeds, NumBaths };
   const [data, setData] = useState(null);
 
   const pressHandler = () => {
@@ -87,7 +87,7 @@ const PropertyDetails = ({ route, navigation }) => {
               <Text>Time Posted: { item.TimePosted }</Text>
               <View style={globalStyles.rating}>
                 <Text>Rating:</Text>
-                <Image source={images.ratings[Rating]} />
+                <Image source={images.ratings[item.Rating]} />
               </View>
               </Card>
           )}

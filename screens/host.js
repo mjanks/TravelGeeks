@@ -12,9 +12,8 @@ const Host = ({ navigation }) => {
   const [description, setDescription] = useState('');
   const [numBeds, setNumBeds] = useState('');
   const [numBaths, setNumBaths] = useState('');
-  const [rating, setRating] = useState('');
 
-  const property = { price, streetAddress, city, state, zipcode, title, description, numBeds, numBaths, rating };
+  const property = { price, streetAddress, city, state, zipcode, title, description, numBeds, numBaths };
 
   const pressHandler = () => {
     alert('Property has been added! Tap refresh button to view updated list.');
@@ -92,13 +91,6 @@ const Host = ({ navigation }) => {
         placeholder='Enter number of bathrooms'
         keyboardType='numeric'
         onChangeText={(val) => setNumBaths(val) }
-      />
-      <Text>Rating:</Text>
-      <TextInput 
-        style={globalStyles.input}
-        placeholder='Enter rating 1-5'
-        keyboardType='numeric'
-        onChangeText={(val) => setRating(val) }
       />
 
       <View style={globalStyles.buttonContainer}>

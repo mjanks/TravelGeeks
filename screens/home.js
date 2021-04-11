@@ -57,7 +57,6 @@ const Home = ({ navigation }) => {
                   <Text>Description: { item.Description }</Text>
                   <Text>Number of beds: { item.NumBeds }</Text>
                   <Text>Number of baths: { item.NumBaths }</Text>
-                  <Text>Rating: { item.Rating }</Text>
                   </Card>
               </TouchableOpacity>
           )}
