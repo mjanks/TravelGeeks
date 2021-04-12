@@ -16,27 +16,32 @@ const profile = ({ navigation }) => {
 		<SafeAreaView style={styles.container}>
 			<ScrollView showsVerticalScrollIndicator={false}>
 				<View style={styles.titleBar}></View>
-
-				<View style={{ alignSelf: "center" }}>
-					<View style={styles.profileImage}>
-						<Image
-							source={require("../assets/profile-pic.jpg")}
-							style={styles.image}
-							resizeMode="center"
-						></Image>
+				<View
+					style={{
+						backgroundColor: "#f7cac8",
+						borderRadius: 50,
+						paddingTop: 10,
+						paddingBottom: 10,
+					}}
+				>
+					<View style={{ alignSelf: "center" }}>
+						<View style={styles.profileImage}>
+							<Image
+								source={require("../assets/profile-pic.jpg")}
+								style={styles.image}
+								resizeMode="center"
+							></Image>
+						</View>
+						<View style={styles.active}></View>
 					</View>
-					<View style={styles.active}></View>
-				</View>
 
-				<View style={styles.infoContainer}>
-					<Text style={[styles.text, { fontWeight: "200", fontSize: 36 }]}>
-						Red
-					</Text>
-					<Text style={[styles.text, { color: "#AEB5BC", fontSize: 14 }]}>
-						Electrical
-					</Text>
+					<View style={styles.infoContainer}>
+						<Text style={[styles.text, { fontWeight: "200", fontSize: 36 }]}>
+							Ian
+						</Text>
+						<Text style={[styles.text, { fontSize: 14 }]}>Malcolm</Text>
+					</View>
 				</View>
-
 				<View style={styles.statsContainer}>
 					<View style={styles.statsBox}>
 						<Text style={[styles.text, { fontSize: 24 }]}>530</Text>
@@ -84,6 +89,27 @@ const profile = ({ navigation }) => {
 								resizeMode="cover"
 							></Image>
 						</View>
+						<View style={styles.mediaImageContainer}>
+							<Image
+								source={require("../assets/media4.jpg")}
+								style={styles.image}
+								resizeMode="cover"
+							></Image>
+						</View>
+						<View style={styles.mediaImageContainer}>
+							<Image
+								source={require("../assets/media5.jpg")}
+								style={styles.image}
+								resizeMode="cover"
+							></Image>
+						</View>
+						<View style={styles.mediaImageContainer}>
+							<Image
+								source={require("../assets/media6.jpg")}
+								style={styles.image}
+								resizeMode="cover"
+							></Image>
+						</View>
 					</ScrollView>
 				</View>
 				<Text style={[styles.subText, { textAlign: "center" }]}>
@@ -97,7 +123,7 @@ const profile = ({ navigation }) => {
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		backgroundColor: "#FFF",
+		backgroundColor: "#fbdddd",
 	},
 	text: {
 		// fontFamily: "HelveticaNeue",
