@@ -2,7 +2,7 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import BottomTabNavigator from "./navigation/tabNavigator";
-import { View, Text, SafeAreaView } from "react-native";
+import { View, Text } from "react-native";
 
 const id = 1;
 

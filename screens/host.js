@@ -33,6 +33,7 @@ const Host = ({ navigation }) => {
 
 	return (
 	<ScrollView >
+    <View style={globalStyles.container}>
       <Text>Welcome Host!</Text>
       <Text>Fill out the form to add a property!</Text>
       <Text>Price:</Text>
@@ -93,13 +94,13 @@ const Host = ({ navigation }) => {
         keyboardType='numeric'
         onChangeText={(val) => setNumBaths(val) }
       />
+    </View>
 
-      <View style={globalStyles.buttonContainer}>
-        <Button title='Tap to add property' color='#cc1111' onPress={pressHandler} />
-      </View>
+    <View style={globalStyles.buttonContainer}>
+      <Button title='Tap to add property' color='#cc1111' onPress={pressHandler} />
+    </View>
 
-
-    </ScrollView>
+  </ScrollView>
 	);
 };
 export default Host;

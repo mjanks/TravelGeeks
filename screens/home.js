@@ -93,7 +93,6 @@ const Home = ({ navigation }) => {
         <Button title='Login' color='#cc1111' onPress={processLogin} />
       </View> */}
 
-
       <Text>Browse properties below:</Text>
       <Button title='Tap to View Properties/Refresh List' onPress={getData}/>
       <FlatList
