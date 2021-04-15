@@ -22,7 +22,7 @@ const WriteReview = ({ route, navigation }) => {
       body: JSON.stringify(review)
     }).then(() => {
       console.log('new review added');
-      console.log(JSON.stringify(review));
+      //console.log(JSON.stringify(review));
     })
     navigation.navigate('PropertyDetails');
   }

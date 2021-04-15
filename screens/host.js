@@ -17,15 +17,16 @@ const Host = ({ navigation }) => {
 
   const pressHandler = () => {
     alert('Property has been added! Tap refresh button to view updated list.');
-    // console.log(property);
-
+    //console.log(property);
+    //https://michaeljanks.com/addProperty.php
+    //https://boiling-eyrie-67120.herokuapp.com/createListing
     fetch('https://michaeljanks.com/addProperty.php', {
       method: 'POST',
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(property)
     }).then(() => {
       console.log('new property added');
-      console.log(JSON.stringify(property));
+      //console.log(JSON.stringify(property));
     })
     navigation.navigate('Home');
   }

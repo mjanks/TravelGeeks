@@ -2,12 +2,24 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import BottomTabNavigator from "./navigation/tabNavigator";
+import { View, Text, SafeAreaView } from "react-native";
+
+const id = 1;
 
 const App = () => {
-  return (
-    <NavigationContainer>
-      <BottomTabNavigator />
-    </NavigationContainer>
-  );
+  if( id == 1)  {
+    return (
+      <NavigationContainer>
+        <BottomTabNavigator />
+      </NavigationContainer>
+    );
+  } else {
+    return (
+      <View>
+        <Text>Hello, World!</Text>
+      </View>
+    );
+  }
+  
 };
 export default App;

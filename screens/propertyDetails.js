@@ -8,18 +8,33 @@ const PropertyDetails = ({ route, navigation }) => {
   const property = { PropertyId, Price, StreetAddress, City, State, Zipcode, Title, Description, NumBeds, NumBaths };
   const [data, setData] = useState(null);
 
-  const pressHandler = () => {
+  const pressHandlerSaved = () => {
+    alert('Property has been saved! Tap refresh button to view updated list.');
+    // console.log(property);
 
-    // fetch("https://michaeljanks.com/addProperty.php", {
-    //   method: 'POST',
-    //   headers: { "Content-Type": "application/json" },
-    //   body: JSON.stringify(property)
-    // }).then(() => {
-    //   console.log('new property added');
-    //   console.log(JSON.stringify(property));
-    // })
+    fetch('https://michaeljanks.com/addSaved.php', {
+      method: 'POST',
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(property)
+    }).then(() => {
+      console.log('property saved');
+      //console.log(JSON.stringify(property));
+    })
+    navigation.navigate('Saved');
+  }
 
+  const pressHandlerBook = () => {
     alert('Not yet implemented!');
+    // console.log(property);
+
+    fetch('https://michaeljanks.com/addTrip.php', {
+      method: 'POST',
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(property)
+    }).then(() => {
+      console.log('property booked');
+      //console.log(JSON.stringify(property));
+    })
     navigation.navigate('Home');
   }
 
@@ -41,7 +56,7 @@ const PropertyDetails = ({ route, navigation }) => {
     })
     .then(data => {
       setData(data);
-      console.log(JSON.stringify(data));
+      //console.log(JSON.stringify(data));
     })
     .catch(err => {
       if (err.name === 'AbortError') {
@@ -49,7 +64,6 @@ const PropertyDetails = ({ route, navigation }) => {
       }
     })
   }
-
 
   return (
     <View style={globalStyles.propDetails}>
@@ -68,8 +82,13 @@ const PropertyDetails = ({ route, navigation }) => {
       <Text>Number of baths: { NumBaths }</Text>
       
       </Card>
+
       <View style={globalStyles.buttonContainer}>
-        <Button title='Save this property!' color='#cc1111' onPress={pressHandler} />
+        <Button title='Book this property!' color='#cc1111' onPress={pressHandlerBook} />
+      </View>
+
+      <View style={globalStyles.buttonContainer}>
+        <Button title='Save this property!' color='#cc1111' onPress={pressHandlerSaved} />
       </View>
 
       <View style={globalStyles.buttonContainer}>

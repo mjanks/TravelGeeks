@@ -11,7 +11,11 @@ import {
 import { Ionicons, MaterialIcons } from "@expo/vector-icons";
 import { globalStyles } from "../styles/global";
 
-const profile = ({ navigation }) => {
+const profile = ({ route, navigation }) => {
+
+	// const { UserId, Username, Password } = route.params;
+	// const userData = { UserId, Username, Password };
+
 	return (
 		<SafeAreaView style={styles.container}>
 			<ScrollView showsVerticalScrollIndicator={false}>
